@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="DesignFormulaire.css" />
+  <title>Comparateur des biens</title>
+  <style type="text/css">
+</style>
+</head>
+<FORM>
+    <INPUT type="text" name="Ville" value=""></br>
+    <INPUT type="text" name="Prix" value=""></br>
+    <INPUT type="text" name="TypedeBien" value=""></br>
+    <INPUT type="text" name="SurfaceMinimale" value=""></br>
+    <INPUT type="text" name="SurfaceMaximale" value=""></br>
+    <INPUT type="text" name="Pièces" value=""></br>
+    <INPUT type="button" value="Submit"
+    onClick=' this.form.zonedetexte.value="NOUVEAU" '></br>
+</FORM>
+<script src=" jquery .js" ></ script >
+    <script >
+    $( function () {
+    var leFocus ;
+    $('input , textarea '). focus ( function () {
+    leFocus = $( this ). attr ('id ');
+    $('# status '). text ( leFocus + ' a le focus ');
+    });
+    });
+    </ script >
+</html>
