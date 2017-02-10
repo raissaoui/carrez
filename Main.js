@@ -30,6 +30,7 @@ var message;
 app.get('/main', function(req, res){
   res.send('home');
   price=include('Scraping_data.js');
+  
   res.send(price);
   if (type=="House"){
     if(price>medium_price_House){
