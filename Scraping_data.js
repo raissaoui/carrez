@@ -58,6 +58,12 @@ app.get('/scrape', function(req, res){
   })
 })
 
+/*function compute(url,callback){
+  var json=lbc(url);
+  callback && callback(json.town,json.price);
+}
+compute(url,function(town,price));*/
+
 app.listen('3000')
 console.log('Magic happens on port 3000');
 exports = module.exports = app;

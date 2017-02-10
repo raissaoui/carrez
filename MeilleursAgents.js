@@ -3,11 +3,11 @@ var fs      = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
 var app     = express();
+var ville="";
+var cp="";
 
 app.get('/scrapeMA', function(req, res){
   var title;
-  var ville="";
-  var cp="";
     url = 'http://www.meilleursagents.com/prix-immobilier/'+ville+'-'+cp+'/';
 
     request(url, function(error, response, html){

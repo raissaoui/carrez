@@ -10,3 +10,6 @@ body
   font-size: 57px;
   font-family: courier;
 }
+.formMessage{
+  background-color: transparent;
+}
