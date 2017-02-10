@@ -16,16 +16,47 @@ app.get('/scrape', function(req, res){
 
       var json = {price : "", city : "", type : "", surface:""};
 
-      $('.price_').filter(function(){
+      /*$('.price_').filter(function(){
         var data = $(this);
         /*title = data.children().first().text().trim();
         release = data.children().last().children().last().text().trim();
         json.price = data.attr('content');*/
+        $('#adview > section > section > section.properties.lineNegative > div:nth-child(5) > h2 > span.value').filter(function(){
+          var data=$(this).text();
 
-        json.price = $(this).parents().parents().find('#adview > section > section > section.properties.lineNegative > div:nth-child(5) > h2 > span.value').text();
-        json.city=$(this).parents().parents().find('#adview > section > section > section.properties.lineNegative > div.line.line_city').text();
-        json.type=$(this).parents().parents().find('#adview > section > section > section.properties.lineNegative > div:nth-child(7)').text();
-        json.surface=$(this).parents().parents().find('#adview > section > section > section.properties.lineNegative > div:nth-child(9)').text();
+          json.price =data;
+
+          console.log(json.price);
+        })
+
+        $('#adview > section > section > section.properties.lineNegative > div.line.line_city').filter(function(){
+          var data=$(this).text();
+
+          json.city=data;
+
+          console.log(json.city);
+        })
+
+        $('#adview > section > section > section.properties.lineNegative > div:nth-child(7)').filter(function(){
+          var data=$(this).text();
+
+          json.type=data;
+
+          console.log(json.type);
+        })
+
+        $('#adview > section > section > section.properties.lineNegative > div:nth-child(9)').filter(function(){
+          var data=$(this).text();
+
+          json.surface=data;
+          
+          console.log(json.surface);
+        })
+
+        //json.price = $(this).parents().parents().find('#adview > section > section > section.properties.lineNegative > div:nth-child(5) > h2 > span.value').text();
+        //json.city=$(this).parents().parents().find('#adview > section > section > section.properties.lineNegative > div.line.line_city').text();
+        //json.type=$(this).parents().parents().find('#adview > section > section > section.properties.lineNegative > div:nth-child(7)').text();
+        //json.surface=$(this).parents().parents().find('#adview > section > section > section.properties.lineNegative > div:nth-child(9)').text();
       })
       // get data
       $('.properties.lineNegative').find('div.line > h2 > span.value').each(function(i, elm) {
