@@ -29,25 +29,26 @@ var message;
 
 app.get('/main', function(req, res){
   res.send('home');
-  
+  price=include('Scraping_data.js');
+  res.send(price);
   if (type=="House"){
     if(price>medium_price_House){
       message="Bad deal";
-      console.log(message);
+      res.send(message);
     }
     else {
       message="Good deal";
-      console.log(message);
+      res.send(message);
     }
   }
   else if(type=="Flat"){
     if(price>medium_price_Flat){
       message="Bad deal";
-      console.log(message);
+      res.send(message);
     }
     else{
       message="Good deal";
-      console.log(message);
+      res.send(message);
     }
   }
 })
