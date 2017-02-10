@@ -6,13 +6,13 @@ var app     = express();
 
 app.get('/scrapeMA', function(req, res){
   var title;
-    url = 'http://www.meilleursagents.com/prix-immobilier/';
+  var ville="";
+  var cp="";
+    url = 'http://www.meilleursagents.com/prix-immobilier/'+ville+'-'+cp+'/';
 
     request(url, function(error, response, html){
         if(!error){
             var $ = cheerio.load(html);
-            var ville="";
-            var cp="";
             var lowest_price_House;
             var lowest_price_Flat;
             var mean_price_House;
