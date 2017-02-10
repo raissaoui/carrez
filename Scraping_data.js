@@ -5,7 +5,13 @@ var cheerio = require('cheerio');
 var app     = express();
 
 
-app.get('/scrape', function(req, res){
+function cleanData(text){
+  text.replace(/(\r\n|\n|\r)/gm,"");
+  text=text.trim();
+  return text;
+}
+
+app.get('/scrapingLeboncoin', function(req, res){
   var title;
 
   url = 'https://www.leboncoin.fr/ventes_immobilieres/1089637884.htm?ca=12_s';
@@ -49,7 +55,7 @@ app.get('/scrape', function(req, res){
           var data=$(this).text();
 
           json.surface=data;
-          
+
           console.log(json.surface);
         })
 
@@ -57,7 +63,7 @@ app.get('/scrape', function(req, res){
         //json.city=$(this).parents().parents().find('#adview > section > section > section.properties.lineNegative > div.line.line_city').text();
         //json.type=$(this).parents().parents().find('#adview > section > section > section.properties.lineNegative > div:nth-child(7)').text();
         //json.surface=$(this).parents().parents().find('#adview > section > section > section.properties.lineNegative > div:nth-child(9)').text();
-      })
+
       // get data
       $('.properties.lineNegative').find('div.line > h2 > span.value').each(function(i, elm) {
           var data=$(this);
