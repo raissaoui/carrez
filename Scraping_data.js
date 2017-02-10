@@ -14,18 +14,18 @@ app.get('/scrape', function(req, res){
     if(!error){
       var $ = cheerio.load(html);
 
-      var title, release, rating;
       var json = {price : "", city : "", type : "", surface:""};
 
       $('.price_').filter(function(){
         var data = $(this);
-        title = data.children().first().text().trim();
+        /*title = data.children().first().text().trim();
         release = data.children().last().children().last().text().trim();
+        json.price = data.attr('content');*/
 
-        json.price = data.attr('content');;
-        /*json.city = city;
-        json.type=type;
-        json.surface=surface;*/
+        json.price = $(this).parents().parents().find('#adview > section > section > section.properties.lineNegative > div:nth-child(5) > h2 > span.value').text();
+        json.city=$(this).parents().parents().find('#adview > section > section > section.properties.lineNegative > div.line.line_city').text();
+        json.type=$(this).parents().parents().find('#adview > section > section > section.properties.lineNegative > div:nth-child(7)').text();
+        json.surface=$(this).parents().parents().find('#adview > section > section > section.properties.lineNegative > div:nth-child(9)').text();
       })
       // get data
       $('.properties.lineNegative').find('div.line > h2 > span.value').each(function(i, elm) {
