@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="DesignFormulaire.css" />
+  <title>Comparateur des Biens</title>
+  <style type="text/css">
+</style>
+</head>
+<FORM>
+  <div class="formdesign">
+    <INPUT type="text" name="url" value=""></br>
+    <INPUT type="button" value="Submit"
+    onClick=' this.form.zonedetexte.value="NOUVEAU" '></br>
+  </div>
+  <div class="design">
+    <h2> Results : </h2>
+    <table class="table_design">
+    <tr>
+      <td>Lowest price <span id="Lowest price" class="lowest_price"></span></td><br/>
+    </tr>
+    <tr>
+      <td>Hightest price <span id="Hightest price" class="highest_price"></span></td><br/>
+    </tr>
+    <tr>
+      <td>City <span id="City" class="City"></span></td><br/>
+    </tr>
+    <tr>
+      <td>Price <span id="Price" class="Price"></span></td><br/>
+    </tr>
+    <tr>
+      <td>City <span id="City" class="City"></span></td><br/>
+    </tr>
+    <tr>
+      <td>Surface <span id="Surface" class="Surface"></span></td><br/>
+    </tr>
+    <tr>
+      <td>Deal or not Deal <span id="Deal or not Deal" class="Deal_not_Deal"></span></td><br/>
+    </tr>
+  </table>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+</FORM>
+<script src=" Main.js" ></ script >
+        <script >
+        $( function () {
+        var leFocus ;
+        $('input , textarea '). focus ( function () {
+        leFocus = $( this ). attr ('id ');
+        $('# status '). text ( leFocus + ' a le focus ');
+        });
+        });
+        </ script >
+</html>
