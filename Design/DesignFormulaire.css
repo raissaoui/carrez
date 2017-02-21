@@ -1,6 +1,6 @@
 body
 {
-   background:url('images3.jpg') no-repeat;
+   background:url("/Web/Design/Picture/image6.jpg") no-repeat;
    background-size: 100%;
 }
 .formdesign{
@@ -12,4 +12,28 @@ body
 }
 .formMessage{
   background-color: transparent;
+}
+.formButton{
+
+}
+.design{
+
+}
+.table_design{
+
+}
+.lowest_price{
+
+}
+.highest_price{
+
+}
+.City{
+
+}
+.Surface{
+
+}
+.Deal_not_Deal{
+
 }
