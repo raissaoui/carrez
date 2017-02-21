@@ -3,15 +3,14 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="/Web/Design/DesignFormulaire.css" type="text/css" />
+  <link rel="stylesheet" href="./Web/Design/DesignFormulaire.css" type="text/css" />
   <title>Comparateur des Biens</title>
 
 </head>
 <FORM>
   <div class="formdesign">
     <INPUT type="text" name="url" value=""></br>
-    <INPUT class="formButton" type="button" value="Submit"
-    onClick=' this.form.zonedetexte.value="NOUVEAU" '></br>
+    <INPUT class="formButton" type="button" value="Submit" onClick=' this.form.zonedetexte.value="NOUVEAU" '></br>
   </div>
   <div class="design">
     <h2> Results : </h2>
@@ -39,20 +38,5 @@
     </tr>
   </table>
 </div>
-</div>
-</div>
-</body>
-</html>
-
 </FORM>
-<script src=" Main.js" ></ script >
-        <script >
-        $( function () {
-        var leFocus ;
-        $('input , textarea '). focus ( function () {
-        leFocus = $( this ). attr ('id ');
-        $('# status '). text ( leFocus + ' a le focus ');
-        });
-        });
-        </ script >
 </html>
