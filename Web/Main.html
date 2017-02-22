@@ -1,17 +1,19 @@
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="./Web/Design/DesignFormulaire.css" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="./Design/DesignFormulaire.css" />
   <title>Comparateur des Biens</title>
-
 </head>
 <FORM>
-  <div class="formdesign">
-    <INPUT type="text" name="url" value=""></br>
-    <INPUT class="formButton" type="button" value="Submit" onClick=' this.form.zonedetexte.value="NOUVEAU" '></br>
-  </div>
+  <div id="form" class="formdesign">
+      <table width="100%">
+          <tr>
+              <td><input id="url"class="url" placeholder="Paste your URL"></td>
+              <td><button id="compute" class="button" onclick="search()"></button></td>
+          </tr>
+      </table>
+</div>
   <div class="design">
     <h2> Results : </h2>
     <table class="table_design">
@@ -34,7 +36,7 @@
       <td>Surface <span id="Surface" class="Surface"></span></td><br/>
     </tr>
     <tr>
-      <td>Deal or not Deal <span id="Deal or not Deal" class="Deal_not_Deal"></span></td><br/>
+      <td>Deal or not Deal<span id="Deal_not_Deal" class="Deal_not_Deal"></span></td><br/>
     </tr>
   </table>
 </div>
