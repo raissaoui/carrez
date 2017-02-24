@@ -1,0 +1,97 @@
+body
+{
+   background:url('./Picture/giphy.gif') no-repeat;
+   background-size: 100%;
+   color: white;
+   text-align: center;
+}
+.formdesign{
+
+}
+.button{
+  margin-right:30px;
+  font-size: 60px;
+  bottom: 0 !important;
+  color: black;
+  position: relative;
+  top:3em;
+
+  /*font-weight: 400;
+  line-height: 1.5;
+  top:5em;
+  left:3em;*/
+}
+
+
+.button:hover
+{
+color:black;
+border-style:outset;
+}
+
+.button:active
+{
+color:green;
+padding-left:4px;
+padding-right:2px;
+padding-top:4px;
+padding-bottom:2px;
+border-style:inset;
+}
+
+.button1{
+   margin-right:30px;
+   font-size: 60px;
+   bottom: 0 !important;
+   color: black;
+   position: relative;
+   top:4em;
+}
+
+.button1:hover
+{
+color:orange;
+border-style:outset;
+}
+
+.button1:active
+{
+color:green;
+padding-left:4px;
+padding-right:2px;
+padding-top:4px;
+padding-bottom:2px;
+border-style:inset;
+}
+
+
+.button2{
+  margin-right:30px;
+  font-size: 60px;
+  bottom: 0 !important;
+  color: black;
+  position: relative;
+  top:5em;
+}
+.button2:hover
+{
+color:blue;
+border-style:outset;
+}
+
+.button2:active
+{
+color:green;
+padding-left:4px;
+padding-right:2px;
+padding-top:4px;
+padding-bottom:2px;
+border-style:inset;
+}
+
+.messageHome{
+  bottom: 0 !important;
+  color: black;
+  position: relative;
+  top:19em;
+}

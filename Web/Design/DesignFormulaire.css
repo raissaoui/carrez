@@ -1,0 +1,117 @@
+body
+{
+   background:url('./Picture/giphy.gif') no-repeat;
+   background-size: 100%;
+   color: white;
+   text-align: center;
+}
+.formdesign{
+  color: lightblue ;
+  width: 100%;
+  text-align: center;
+  font-size: 57px;
+  font-family: courier;
+}
+.formMessage{
+  background-color: transparent;
+}
+.button{
+background-image: url('../Picture/image10.png');
+width: 45px;
+height: 45px;
+background-size: cover;
+
+float:right;
+margin-right: 10px;
+
+}
+.design{
+
+}
+.table_design{
+   text-align: center;
+}
+.lowest_price{
+
+}
+.highest_price{
+
+}
+.City{
+
+}
+.Surface{
+
+}
+.Deal_not_Deal{
+
+}
+
+.url {
+  
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.url:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.url::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.url:-ms-input-placeholder {
+  color: #999;
+}
+.url::-webkit-input-placeholder {
+  color: #999;
+}
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .url {
+  cursor: not-allowed;
+  background-color: #eee;
+  opacity: 1;
+}
+textarea.url {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: none;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"] {
+    line-height: 34px;
+  }
+  input[type="date"].input-sm,
+  input[type="time"].input-sm,
+  input[type="datetime-local"].input-sm,
+  input[type="month"].input-sm {
+    line-height: 30px;
+  }
+  input[type="date"].input-lg,
+  input[type="time"].input-lg,
+  input[type="datetime-local"].input-lg,
+  input[type="month"].input-lg {
+    line-height: 46px;
+  }
+}
