@@ -5,13 +5,56 @@ var cheerio = require('cheerio');
 var app     = express();
 var ville="";
 var cp="";
-var url='http://www.meilleursagents.com/prix-immobilier/courbevoie-92400/';
+//var url='http://www.meilleursagents.com/prix-immobilier/courbevoie-92400/';
 var lowest_price_House;
 var lowest_price_Flat;
 var medium_price_House;
 var medium_price_Flat;
 var highest_price_House;
 var highest_price_Flat;
+
+var Scraping_data_Leboncoin = require('../Scraping/Scraping_data_Leboncoin.js');
+var json=Scraping_data_Leboncoin.leboncoin_city;
+
+var city=function(json,callback){
+  var city="";
+  if(json!=null){
+    for (var i=0; i < json.length; i++){
+      if(json[i]!=" "){
+        city=city+json[i];
+    }
+  }
+
+  return city;
+  }
+}
+
+var cp=function(json,callback){
+  var cp="";
+  if(json!=null){
+    for (var i=json.length; i < 0; i--){
+      if(json[i]!=" "){
+        cp=cp+json[i];
+    }
+  }
+
+  return cp;
+  }
+}
+
+
+function CleanURL(strUrl) {
+    var ref = strUrl.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    return ref;
+}
+
+var url=function(city,cp,callback){
+  if (json != null && json.town != null) {
+            var newURL = CleanURL(city) + '-' + cp;
+            var urlMeilleursAgents= 'http://www.meilleursagents.com/prix-immobilier/' + newURL + '/';
+            return urlMeilleursAgents;
+  }
+}
 
 
 var MeilleursAgents_lowest_price_Flat = function(url,callback){
@@ -81,7 +124,7 @@ var MeilleursAgents_lowest_price_House = function(url,callback){
 
 }
 
-var MeilleursAgents_medium_price_Flat = function(url,callback){
+var MeilleursAgents_medium_price_House = function(url,callback){
   request(url, function(error, response, html){
         if(!error){
             var $ = cheerio.load(html);
@@ -118,5 +161,5 @@ exports.MeilleursAgents_lowest_price_Flat = MeilleursAgents_lowest_price_Flat;
 exports.MeilleursAgents_medium_price_Flat = MeilleursAgents_medium_price_Flat;
 exports.MeilleursAgents_highest_price_Flat = MeilleursAgents_highest_price_Flat;
 exports.MeilleursAgents_lowest_price_House = MeilleursAgents_lowest_price_House;
-exports.MeilleursAgents_medium_price_Flat = MeilleursAgents_medium_price_Flat;
+exports.MeilleursAgents_medium_price_House = MeilleursAgents_medium_price_House;
 exports.MeilleursAgents_highest_price_House = MeilleursAgents_highest_price_House;

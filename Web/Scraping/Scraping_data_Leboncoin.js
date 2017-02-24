@@ -5,13 +5,13 @@ var cheerio = require('cheerio');
 var app     = express();
 
 
-function cleanData(text){
+function clean(text){
   text.replace(/(\r\n|\n|\r)/gm,"");
   text=text.trim();
   return text;
 }
 
-var url = 'https://www.leboncoin.fr/ventes_immobilieres/1089637884.htm?ca=12_s';
+//var url = 'https://www.leboncoin.fr/ventes_immobilieres/1089637884.htm?ca=12_s';
 var price;
 var city;
 var type;
@@ -45,6 +45,36 @@ var leboncoin_city = function(url,callback){
   }
 })
 }
+
+var town=function(city,callback){
+  var twon="";
+  if(json!=null){
+    for (var i=0; i < city.length; i++){
+      if(city[i]!=" "){
+        town=town+city[i];
+      }
+      else{
+        break;
+      }
+  }
+  return town;
+  }
+}
+
+var cp=function(city,callback){
+  var cp="";
+  if(city!=null){
+    for (var i=city.length; i < 0; i--){
+      if(city[i]!=" "){
+        cp=cp+city[i];
+      }
+      else{
+        break;
+      }
+  }
+  return cp;
+  }
+}
 var leboncoin_type = function(url,callback){
   request(url, function(error, response, html){
     if(!error){
@@ -74,6 +104,7 @@ var leboncoin_surface= function(url,callback){
     callback(surface);
   })
 }
+
 
 exports.leboncoin_price = leboncoin_price;
 exports.leboncoin_city = leboncoin_city;

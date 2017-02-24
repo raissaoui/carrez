@@ -11,20 +11,51 @@
           <tr>
               <td><input id="url"class="url" placeholder="Paste your URL"></td>
               <td><button id="compute" class="button" onclick="search()"></button></td>
+              <script>
+
+                      function research() {
+                          var url_Leboncoin = $("#url").val();
+                          $.ajax({
+                          url : 'http://localhost:3000/getData',
+                          dataType : 'text',
+                          data : {
+                          url: url_Leboncoin
+                          },
+                          success : function(data){
+                          console.log(JSON.parse(data));
+                          $("#type").html(JSON.parse(data)).Scraping_data_Leboncoin.leboncoin_type);
+                          if (type=="flat"){
+                            $("#Lowest_price").html(JSON.parse(data).Scraping_data_MeilleursAgents.MeilleursAgents_lowest_price_Flat);
+                            $("#Hightest_price").html(JSON.parse(data).Scraping_data_MeilleursAgents.MeilleursAgents_lowest_price_Flat);
+                          }
+                          else{
+                            $("#Lowest_price").html(JSON.parse(data).Scraping_data_MeilleursAgents.MeilleursAgents_lowest_price_House);
+                            $("#Hightest_price").html(JSON.parse(data).Scraping_data_MeilleursAgents.MeilleursAgents_lowest_price_House);
+                          }
+
+                          $("#City").html(JSON.parse(data).Scraping_data_Leboncoin.leboncoin_city);
+                          $("#Surface").html(JSON.parse(data).leboncoin.leboncoin_surface);
+                          $("#Price").html(JSON.parse(data).leboncoin.leboncoin_price);
+                          var Deal_not_Deal = JSON.parse(data).deal;
+                        }
+                      });
+                    }
+              </script>
           </tr>
       </table>
 </div>
+
   <div class="design">
     <h2> Results : </h2>
     <table class="table_design">
+      <tr>
+        <td>Title <span id="Title" class="Title"></span></td><br/>
+      </tr>
     <tr>
-      <td>Lowest price <span id="Lowest price" class="lowest_price"></span></td><br/>
+      <td>Lowest price <span id="Lowest_price" class="lowest_price"></span></td><br/>
     </tr>
     <tr>
-      <td>Hightest price <span id="Hightest price" class="highest_price"></span></td><br/>
-    </tr>
-    <tr>
-      <td>City <span id="City" class="City"></span></td><br/>
+      <td>Hightest price <span id="Hightest_price" class="highest_price"></span></td><br/>
     </tr>
     <tr>
       <td>Price <span id="Price" class="Price"></span></td><br/>
